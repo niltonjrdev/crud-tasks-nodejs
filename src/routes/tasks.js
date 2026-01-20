@@ -5,13 +5,11 @@ import crypto from 'node:crypto';
 export async function tasksRoutes(req, res) {
   const { method, url } = req;
 
-  // GET /tasks
   if (method === 'GET' && url === '/tasks') {
     res.setHeader('Content-Type', 'application/json');
     return res.end(JSON.stringify(tasks));
   }
 
-  // POST /tasks
   if (method === 'POST' && url === '/tasks') {
     try {
       const body = await parseBody(req);
