@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/niltonjrdev/crud-tasks-nodejs/issues"
   },
-  "homepage": "https://github.com/niltonjrdev/crud-tasks-nodejs#readme"
+  "homepage": "https://github.com/niltonjrdev/crud-tasks-nodejs#readme",
+  "dependencies": {
+    "csv-parse": "^6.1.0"
+  }
 }
