@@ -39,5 +39,46 @@ export async function tasksRoutes(req, res) {
     }
   }
 
+  if (method === 'PUT') {
+    const routeParams = url.match(/^\/tasks\/([a-zA-Z0-9-]+)$/);
+
+    if (routeParams) {
+      const [, id] = routeParams;
+
+      const taskIndex = tasks.findIndex(task => task.id === id);
+
+      if (taskIndex === -1) {
+        res.statusCode = 404;
+        return res.end('Task não encontrada');
+      }
+
+      try {
+        const body = await parseBody(req);
+
+        const { title, description } = body ?? {};
+
+        if (!title && !description) {
+          res.statusCode = 400;
+          return res.end('Informe title ou description');
+        }
+
+        const existingTask = tasks[taskIndex];
+
+        tasks[taskIndex] = {
+          ...existingTask,
+          title: title ?? existingTask.title,
+          description: description ?? existingTask.description,
+          updated_at: new Date(),
+        };
+
+        res.setHeader('Content-Type', 'application/json');
+        return res.end(JSON.stringify(tasks[taskIndex]));
+      } catch {
+        res.statusCode = 400;
+        return res.end('JSON inválido');
+      }
+    }
+  }
+
   return false;
 }
