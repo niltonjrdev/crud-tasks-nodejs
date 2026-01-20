@@ -80,5 +80,26 @@ export async function tasksRoutes(req, res) {
     }
   }
 
+  if (method === 'DELETE') {
+    const routeParams = url.match(/^\/tasks\/([a-zA-Z0-9-]+)$/);
+
+    if (routeParams) {
+      const [, id] = routeParams;
+
+      const taskIndex = tasks.findIndex(task => task.id === id);
+
+      if (taskIndex === -1) {
+        res.statusCode = 404;
+        return res.end('Task não encontrada');
+      }
+
+      tasks.splice(taskIndex, 1);
+
+      res.statusCode = 204;
+      return res.end();
+    }
+  }
+
+
   return false;
 }
