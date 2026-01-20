@@ -100,6 +100,32 @@ export async function tasksRoutes(req, res) {
     }
   }
 
+  if (method === 'PATCH') {
+    const routeParams = url.match(/^\/tasks\/([a-zA-Z0-9-]+)\/complete$/);
 
+    if (routeParams) {
+      const [, id] = routeParams;
+
+      const taskIndex = tasks.findIndex(task => task.id === id);
+
+      if (taskIndex === -1) {
+        res.statusCode = 404;
+        return res.end('Task não encontrada');
+      }
+
+      const task = tasks[taskIndex];
+
+      task.completed_at = task.completed_at
+        ? null
+        : new Date();
+
+      task.updated_at = new Date();
+
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify(task));
+    }
+  }
+
+  
   return false;
 }
