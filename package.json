@@ -1,7 +1,7 @@
 {
   "name": "crud-tasks-nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "REST API for task management built with pure Node.js — no frameworks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/niltonjrdev/crud-tasks-nodejs.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nodejs", "rest-api", "crud", "javascript", "backend"],
+  "author": "Nilton Junior",
   "license": "ISC",
   "type": "module",
   "bugs": {
