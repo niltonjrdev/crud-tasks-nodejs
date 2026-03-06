@@ -4,8 +4,7 @@
 
 REST API for task management built **without any framework**, using only Node.js native modules.
 
-> Developed as a challenge from the **Node.js** module at [Rocketseat](https://www.rocketseat.com.br/), with the goal of understanding how HTTP works under the hood of frameworks like Express and Fastify — manually implementing routing, body parsing, and middlewares.
-
+> Developed to deepen the understanding of how HTTP works under the hood of frameworks like Express and Fastify — manually implementing routing, body parsing, and middlewares.
 ---
 
 ## 🚀 Features

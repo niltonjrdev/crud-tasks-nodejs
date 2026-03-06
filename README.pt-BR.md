@@ -4,7 +4,7 @@
 
 API REST para gerenciamento de tarefas construída **sem nenhum framework**, utilizando apenas os módulos nativos do Node.js.
 
-> Desenvolvido como desafio do módulo de **Node.js** da [Rocketseat](https://www.rocketseat.com.br/), com o objetivo de entender como o HTTP funciona por baixo de frameworks como Express e Fastify — implementando manualmente roteamento, parsing de body e middlewares.
+> Desenvolvido para aprofundar o entendimento de como o HTTP funciona internamente em frameworks como Express e Fastify — implementando manualmente roteamento, body parsing e middlewares.
 
 ---
 
